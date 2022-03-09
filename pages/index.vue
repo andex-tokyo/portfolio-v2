@@ -7,9 +7,7 @@
       <Nav></Nav>
       <div class="left">
         <span class="name"
-          ><a href="https://tsucchy.me/" @click="nameClick">
-            YUKI TSUCHIDA
-          </a></span
+          ><a href="/" @click="nameClick"> YUKI TSUCHIDA </a></span
         >
         <a href="#works" class="scroll-button"
           ><span></span><span></span><span></span>Scroll</a
@@ -37,28 +35,23 @@ export default {
   },
   mounted() {
     const webStorage = function () {
-      const $loading = $(".loading");
-      const ua = navigator.userAgent;
-
-      // if (sessionStorage.getItem("access")) {
-      //   $(".wrap").css("display", "none");
-      //   $(".loader-bg ,.loader").height(h).css("display", "flex");
-      //   $(".loading").css("display", "none");
-      //   $(".wrap").css("display", "flex");
-      // } else {
-      if (window.innerWidth < 649) {
-        $(".loading").delay(1500).fadeOut(800);
+      if (sessionStorage.getItem("access")) {
+        $(".loading").css("display", "none");
+        $(".wrap").css("display", "flex");
       } else {
-        $(".loading").delay(2500).fadeOut(800);
-        $(".loading-text")
-          .delay(1500)
-          .queue(function () {
-            $(this).addClass("animation");
-          });
+        if (window.innerWidth < 649) {
+          $(".loading").delay(1500).fadeOut(800);
+        } else {
+          $(".loading").delay(2500).fadeOut(800);
+          $(".loading-text")
+            .delay(1500)
+            .queue(function () {
+              $(this).addClass("animation");
+            });
+        }
+        sessionStorage.setItem("access", 0);
       }
-      sessionStorage.setItem("access", 0);
     };
-    // };
 
     webStorage();
     $(".wrap").css("display", "flex");

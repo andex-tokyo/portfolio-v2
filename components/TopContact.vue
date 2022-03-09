@@ -4,7 +4,9 @@
     <div class="contact-list">
       <div v-for="content in AboutData.contact" :key="content.text">
         <div class="contact-icon">
-          <a :href="content.link"><img :src="content.img.url" alt="" /></a>
+          <a :href="content.link" target="_blank" rel="noopener noreferrer"
+            ><img :src="content.img.url" alt=""
+          /></a>
           <h4>{{ content.text }}</h4>
         </div>
       </div>
