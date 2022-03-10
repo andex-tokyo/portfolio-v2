@@ -2,7 +2,9 @@
   <div class="works-wrap">
     <Nav></Nav>
     <div class="works-header">
-      <span class="works-name"><a href="/"> YUKI TSUCHIDA </a> </span>
+      <span class="works-name"
+        ><a href="/" @click="nameClick"> YUKI TSUCHIDA </a>
+      </span>
     </div>
     <div class="works-main">
       <WorksSlider :DetailData="DetailData"></WorksSlider>
@@ -33,26 +35,31 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.DetailData.description,
+          content: this.DetailData.description.replace(/(<([^>]+)>)/gi, ""),
         },
         { hid: "og:type", property: "og:type", content: "article" },
         {
           hid: "og:title",
           property: "og:title",
-          content: this.DetailData.title,
+          content: `${this.DetailData.title} | YUKI TSUCHIDA`,
         },
         {
           hid: "og:description",
           property: "og:description",
-          content: this.DetailData.description,
+          content: this.DetailData.description.replace(/(<([^>]+)>)/gi, ""),
         },
         {
-          hid: "og:url",
-          property: "og:url",
+          hid: "og:image",
+          property: "og:image",
           content: this.DetailData.image[0].img.url,
         },
       ],
     };
+  },
+  methods: {
+    nameClick() {
+      sessionStorage.removeItem("access");
+    },
   },
 };
 </script>

@@ -80,8 +80,8 @@ export default {
             "Experience Creator やりたいことをやりたいだけ。 1996年香港出身鎌倉在住 土田悠輝",
         },
         {
-          hid: "og:url",
-          property: "og:url",
+          hid: "og:image",
+          property: "og:image",
           content:
             "https://images.microcms-assets.io/assets/d1891ae6d53747678bd7870d6ea68f21/d061371d4f6d482da6e6c65e471cebc2/ogp.png",
         },
