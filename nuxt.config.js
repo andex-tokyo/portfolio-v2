@@ -50,10 +50,11 @@ export default {
     google: {
       families: ['Roboto+Condensed:300i']
     },
-    'google-gtag': {
-      id: 'G-JZ5PT8MLDQ',
-      debug: false,
-    }
+  },
+  'google-gtag': {
+    id: 'G-JZ5PT8MLDQ',
+    debug: false,
+
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
