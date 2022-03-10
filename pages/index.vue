@@ -55,7 +55,6 @@ export default {
 
     webStorage();
     $(".wrap").css("display", "flex");
-    $(".works-wrap").css("display", "block");
   },
   methods: {
     nameClick() {
@@ -155,6 +154,136 @@ h3 {
 
   100% {
     transform: translateX(-30vw);
+  }
+}
+/*============
+tablet
+=============*/
+@media screen and (max-width: 1024px) {
+  .name {
+    font-size: 20pt;
+  }
+
+  h3 {
+    font-size: 15pt;
+  }
+}
+/*============
+sp
+=============*/
+@media screen and (max-width: 649px) {
+  .wrap {
+    flex-direction: column;
+  }
+  .loading-text {
+    display: none;
+  }
+
+  .left {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .scroll-button {
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 80px;
+    font-family: "RobotoCondensed";
+    color: #1f1f1f;
+  }
+
+  .scroll-button span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 2px solid #1f1f1f;
+    border-bottom: 2px solid #1f1f1f;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: sdb 2s infinite;
+    animation: sdb 2s infinite;
+    opacity: 0;
+    box-sizing: border-box;
+  }
+
+  .scroll-button span:nth-of-type(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+
+  .scroll-button span:nth-of-type(2) {
+    top: 16px;
+    -webkit-animation-delay: 0.15s;
+    animation-delay: 0.15s;
+  }
+
+  .scroll-button span:nth-of-type(3) {
+    top: 32px;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+  }
+
+  @-webkit-keyframes sdb {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes sdb {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .animation {
+    animation: anim 1s forwards;
+  }
+
+  @keyframes anim {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .name {
+    position: relative;
+    font-size: 20pt;
+    letter-spacing: 7px;
+  }
+
+  .right {
+    width: 96vw;
+    margin: 50px auto;
+  }
+
+  h3 {
+    font-size: 15pt;
   }
 }
 </style>

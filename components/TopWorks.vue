@@ -2,7 +2,7 @@
   <div class="works" id="works">
     <h3>-Works-</h3>
     <div v-for="content in WorksData.contents" :key="content.id">
-      <nuxt-link :to="`/${content.id}`">
+      <nuxt-link :to="`/works/${content.id}`">
         <div class="products">
           <img :src="content.image[0].img.url" alt="" />
         </div>
@@ -22,9 +22,7 @@ export default {
   margin-top: 10%;
   /*    margin-topを10%に*/
 }
-.works-wrap {
-  display: none;
-}
+
 .works-name a {
   color: #1f1f1f;
   text-decoration: none;

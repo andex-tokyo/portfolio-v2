@@ -53,4 +53,65 @@ export default {
 .profile-image img {
   width: 80%;
 }
+/*============
+tablet
+=============*/
+@media screen and (max-width: 1024px) {
+  .profile {
+    width: 100%;
+  }
+
+  .profile-image {
+    width: 40%;
+  }
+  .profile-name {
+    font-size: 10px;
+  }
+
+  .profile-text p {
+    font-size: 10px;
+  }
+  .profile-text span {
+    font-size: 8px;
+  }
+}
+/*============
+sp
+=============*/
+@media screen and (max-width: 649px) {
+  .profile {
+    width: 100%;
+    display: block;
+  }
+
+  .profile-image {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .profile-text {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .profile-text p {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .profile-text span {
+    font-size: 8px;
+  }
+}
+/*============
+small sp
+=============*/
+@media screen and (max-width: 360px) {
+  .profile-image {
+    width: 80%;
+  }
+  .profile-text {
+    width: 80%;
+  }
+}
 </style>

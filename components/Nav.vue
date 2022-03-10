@@ -145,4 +145,30 @@ nav .inner ul li a {
   -webkit-transform: translateY(-10px) rotate(315deg);
   transform: translateY(-10px) rotate(315deg);
 }
+/*============
+tablet
+=============*/
+@media screen and (max-width: 1024px) {
+  nav {
+    width: 100vw;
+    right: -100vw;
+  }
+  .toggle_btn {
+    width: 20px;
+    right: 20px;
+  }
+
+  .toggle_btn span {
+    width: 20px;
+  }
+}
+
+/*============
+sp
+=============*/
+@media screen and (max-width: 649px) {
+  nav .inner ul li a {
+    font-size: 20pt;
+  }
+}
 </style>

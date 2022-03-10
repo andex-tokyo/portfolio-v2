@@ -57,4 +57,25 @@ export default {
   width: 60px;
   cursor: pointer;
 }
+/*============
+tablet
+=============*/
+@media screen and (max-width: 1024px) {
+  .contact-list {
+    width: 80%;
+  }
+
+  .contact-icon img {
+    width: 40px;
+  }
+
+  .contact-icon h4 {
+    font-size: 3pt;
+  }
+
+  .works-title-text {
+    font-size: 14px;
+    letter-spacing: 5px;
+  }
+}
 </style>
