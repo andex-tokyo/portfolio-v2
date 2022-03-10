@@ -223,7 +223,9 @@ sp
     display: inline-block;
     text-decoration: none;
     padding-top: 80px;
-    font-family: "RobotoCondensed";
+    font-family: "Roboto Condensed";
+    font-weight: 300;
+    font-style: italic;
     color: #1f1f1f;
   }
 
