@@ -5,7 +5,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'portfolio-v2',
+    titleTemplate: '%s | YUKI TSUCHIDA',
     htmlAttrs: {
       lang: 'ja'
     },

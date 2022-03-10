@@ -26,6 +26,34 @@ export default {
   mounted() {
     $(".works-wrap").css("display", "block");
   },
+  head() {
+    return {
+      title: this.DetailData.title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.DetailData.description,
+        },
+        { hid: "og:type", property: "og:type", content: "article" },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.DetailData.title,
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.DetailData.description,
+        },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: this.DetailData.image[0].img.url,
+        },
+      ],
+    };
+  },
 };
 </script>
 <style>
