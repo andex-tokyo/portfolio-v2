@@ -76,6 +76,13 @@ body {
     Verdana, Meiryo, sans-serif;
   color: #1f1f1f;
 }
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #1f1f1f;
+  text-decoration: none;
+}
 .works-header {
   width: 96vw;
   margin: 20px;
