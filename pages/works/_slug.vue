@@ -76,13 +76,6 @@ body {
     Verdana, Meiryo, sans-serif;
   color: #1f1f1f;
 }
-a:link,
-a:visited,
-a:hover,
-a:active {
-  color: #1f1f1f;
-  text-decoration: none;
-}
 .works-header {
   width: 96vw;
   margin: 20px;
@@ -92,6 +85,10 @@ a:active {
   font-family: "Roboto Condensed";
   font-weight: 300;
   font-style: italic;
+}
+.works-name a {
+  color: #1f1f1f;
+  text-decoration: none;
 }
 .works-wrap {
   display: none;

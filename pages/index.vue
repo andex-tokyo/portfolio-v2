@@ -99,13 +99,6 @@ export default {
 html {
   scroll-behavior: smooth;
 }
-a:link,
-a:visited,
-a:hover,
-a:active {
-  color: #1f1f1f;
-  text-decoration: none;
-}
 body {
   margin: 0px;
   width: 100%;
