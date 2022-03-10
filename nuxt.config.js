@@ -44,11 +44,15 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    'nuxt-webfontloader'
+    'nuxt-webfontloader', '@nuxtjs/google-gtag'
   ],
   webfontloader: {
     google: {
       families: ['Roboto+Condensed:300i']
+    },
+    'google-gtag': {
+      id: 'G-JZ5PT8MLDQ',
+      debug: false,
     }
   },
 
