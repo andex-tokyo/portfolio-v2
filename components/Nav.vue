@@ -85,6 +85,8 @@ nav .inner ul li a {
   color: #fff;
   font-size: 20pt;
   font-family: "Roboto Condensed";
+  font-weight: 300;
+  font-style: italic;
   padding: 1em;
   text-decoration: none;
   transition-duration: 0.2s;
