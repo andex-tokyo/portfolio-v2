@@ -38,6 +38,8 @@ export default {
 .products img {
   width: 80%;
   height: 80%;
+  aspect-ratio: 1.91/1;
+  object-fit: cover;
   cursor: pointer;
 }
 </style>

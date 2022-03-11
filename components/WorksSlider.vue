@@ -52,6 +52,7 @@ export default {
 }
 .works-image {
   width: 60vw;
+  aspect-ratio: 16/9;
 }
 /*============
 tablet
