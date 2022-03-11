@@ -42,4 +42,12 @@ export default {
   object-fit: cover;
   cursor: pointer;
 }
+/*============
+sp
+=============*/
+@media screen and (max-width: 649px) {
+  .products {
+    margin-bottom: 20px;
+  }
+}
 </style>
