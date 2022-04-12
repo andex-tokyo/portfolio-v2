@@ -27,6 +27,7 @@ export default {
   async asyncData({ $microcms }) {
     const WorksData = await $microcms.get({
       endpoint: "works",
+      queries: { limit: 50 },
     });
     const AboutData = await $microcms.get({
       endpoint: "about",
