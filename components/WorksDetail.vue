@@ -19,7 +19,7 @@ export default {
 </script>
 <style>
 .works-title {
-  width: 96vw;
+  width: 100%;
   margin-top: 50px;
   margin-bottom: 30px;
 }
