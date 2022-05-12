@@ -3,7 +3,7 @@
     <Nav></Nav>
     <div class="works-header">
       <span class="works-name"
-        ><a href="/" @click="nameClick"> YUKI TSUCHIDA </a>
+        ><a href="/" @click="nameClick"> andex. </a>
       </span>
     </div>
     <div class="works-main">
@@ -41,7 +41,7 @@ export default {
         {
           hid: "og:title",
           property: "og:title",
-          content: `${this.DetailData.title} | YUKI TSUCHIDA`,
+          content: `${this.DetailData.title} | andex.`,
         },
         {
           hid: "og:description",
@@ -85,6 +85,7 @@ body {
   font-family: "Roboto Condensed";
   font-weight: 300;
   font-style: italic;
+  margin-left: 20px;
 }
 .works-name a {
   color: #1f1f1f;

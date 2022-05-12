@@ -1,14 +1,12 @@
 <template>
   <div>
     <div class="loading">
-      <div class="loading-text name">YUKI TSUCHIDA</div>
+      <div class="loading-text name">andex.</div>
     </div>
     <div class="wrap">
       <Nav></Nav>
       <div class="left">
-        <span class="name"
-          ><a href="/" @click="nameClick"> YUKI TSUCHIDA </a></span
-        >
+        <span class="name"><a href="/" @click="nameClick"> andex. </a></span>
         <a href="#works" class="scroll-button"
           ><span></span><span></span><span></span>Scroll</a
         >
@@ -59,26 +57,24 @@ export default {
   },
   head() {
     return {
-      title: "YUKI TSUCHIDA - 土田悠輝",
+      title: "andex.",
       titleTemplate: "",
       meta: [
         {
           hid: "description",
           name: "description",
-          content:
-            "Experience Creator やりたいことをやりたいだけ。 1996年香港出身鎌倉在住 土田悠輝",
+          content: "Experience Creator やりたいことをやりたいだけ。",
         },
         { hid: "og:type", property: "og:type", content: "article" },
         {
           hid: "og:title",
           property: "og:title",
-          content: "YUKI TSUCHIDA",
+          content: "andex.",
         },
         {
           hid: "og:description",
           property: "og:description",
-          content:
-            "Experience Creator やりたいことをやりたいだけ。 1996年香港出身鎌倉在住 土田悠輝",
+          content: "Experience Creator やりたいことをやりたいだけ。",
         },
         {
           hid: "og:image",
