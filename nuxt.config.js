@@ -1,60 +1,52 @@
-const webpack = require('webpack')
+const webpack = require("webpack");
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: "static",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s | YUKI TSUCHIDA',
+    titleTemplate: "%s | andex.",
     htmlAttrs: {
-      lang: 'ja'
+      lang: "ja",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+      { hid: "description", name: "description", content: "" },
+      { name: "format-detection", content: "telephone=no" },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/swiper', mode: 'client' }
-  ],
+  plugins: [{ src: "~/plugins/swiper", mode: "client" }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['nuxt-microcms-module'],
+  buildModules: ["nuxt-microcms-module"],
   microcms: {
     options: {
       serviceDomain: process.env.SERVICE_DOMAIN,
       apiKey: process.env.API_KEY,
     },
-    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
+    mode: process.env.NODE_ENV === "production" ? "server" : "all",
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    'nuxt-webfontloader', '@nuxtjs/google-gtag'
-  ],
+  modules: ["nuxt-webfontloader", "@nuxtjs/google-gtag"],
   webfontloader: {
     google: {
-      families: ['Roboto+Condensed:300i']
+      families: ["Roboto+Condensed:300i"],
     },
   },
-  'google-gtag': {
-    id: 'G-JZ5PT8MLDQ',
+  "google-gtag": {
+    id: "G-JZ5PT8MLDQ",
     debug: false,
-
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -62,8 +54,8 @@ export default {
     vendor: ["jquery"],
     plugins: [
       new webpack.ProvidePlugin({
-        $: "jquery"
-      })
+        $: "jquery",
+      }),
     ],
-  }
-}
+  },
+};

@@ -63,7 +63,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "Experience Creator やりたいことをやりたいだけ。",
+          content: "Experience Creator",
         },
         { hid: "og:type", property: "og:type", content: "article" },
         {
@@ -74,7 +74,7 @@ export default {
         {
           hid: "og:description",
           property: "og:description",
-          content: "Experience Creator やりたいことをやりたいだけ。",
+          content: "Experience Creator",
         },
         {
           hid: "og:image",
