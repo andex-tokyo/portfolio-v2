@@ -1,0 +1,153 @@
+<div id="navArea">
+  <nav>
+    <div class="inner">
+      <ul>
+        <li><a href="/#works">-Works-</a></li>
+        <li><a href="/#about">-About-</a></li>
+        <li><a href="/#contact">-Contact-</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <button class="toggle_btn" type="button" aria-label="Open navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
+
+<script>
+  const navArea = document.querySelector("#navArea");
+  const toggleButton = document.querySelector<HTMLButtonElement>(".toggle_btn");
+  const navLinks = document.querySelectorAll("#navArea .inner a");
+
+  toggleButton?.addEventListener("click", () => {
+    const isOpen = navArea?.classList.toggle("open") ?? false;
+    toggleButton.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navArea?.classList.remove("open");
+      toggleButton?.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>
+
+<style>
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: -60vw;
+    bottom: 0;
+    width: 60vw;
+    background: #1f1f1f;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all 0.5s;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  .open nav {
+    right: 0;
+    opacity: 1;
+  }
+
+  nav .inner {
+    padding: 25px;
+  }
+
+  nav .inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav .inner ul li a {
+    display: block;
+    color: #fff;
+    font-size: 20pt;
+    font-family: "Roboto Condensed";
+    font-weight: 300;
+    font-style: italic;
+    padding: 1em;
+    text-decoration: none;
+    transition-duration: 0.2s;
+    margin: 50px auto;
+  }
+
+  .toggle_btn {
+    display: block;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .toggle_btn span {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all 0.5s;
+  }
+
+  .toggle_btn span:nth-child(1) {
+    top: 4px;
+  }
+
+  .toggle_btn span:nth-child(2) {
+    top: 14px;
+  }
+
+  .toggle_btn span:nth-child(3) {
+    bottom: 4px;
+  }
+
+  .open .toggle_btn span {
+    background-color: #fff;
+  }
+
+  .open .toggle_btn span:nth-child(1) {
+    transform: translateY(10px) rotate(-315deg);
+  }
+
+  .open .toggle_btn span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .open .toggle_btn span:nth-child(3) {
+    transform: translateY(-10px) rotate(315deg);
+  }
+
+  @media screen and (max-width: 1024px) {
+    nav {
+      width: 100vw;
+      right: -100vw;
+    }
+
+    .toggle_btn {
+      width: 20px;
+      right: 20px;
+    }
+
+    .toggle_btn span {
+      width: 20px;
+    }
+  }
+</style>

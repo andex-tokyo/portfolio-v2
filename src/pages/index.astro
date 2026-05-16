@@ -1,0 +1,210 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import TopAbout from "../components/TopAbout.astro";
+import TopContact from "../components/TopContact.astro";
+import TopWorks from "../components/TopWorks.astro";
+import { getAbout, getWorks } from "../lib/microcms";
+
+const worksData = await getWorks();
+const about = await getAbout();
+---
+
+<BaseLayout title="andex." titleTemplate={false}>
+  <div class="loading">
+    <div class="loading-text name">andex.</div>
+  </div>
+  <div class="wrap">
+    <Nav />
+    <div class="left">
+      <span class="name"><a href="/" data-reset-loading> andex. </a></span>
+      <a href="#works" class="scroll-button">
+        <span></span><span></span><span></span>Scroll
+      </a>
+    </div>
+    <div class="right">
+      <TopWorks works={worksData.contents} />
+      <TopAbout about={about} />
+      <TopContact about={about} />
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const loading = document.querySelector<HTMLElement>(".loading");
+  const loadingText = document.querySelector<HTMLElement>(".loading-text");
+  const wrap = document.querySelector<HTMLElement>(".wrap");
+  const reset = document.querySelector("[data-reset-loading]");
+
+  function showContent() {
+    if (wrap) wrap.style.display = "flex";
+  }
+
+  if (sessionStorage.getItem("access")) {
+    if (loading) loading.style.display = "none";
+    showContent();
+  } else {
+    showContent();
+    if (window.innerWidth < 649) {
+      window.setTimeout(() => loading?.classList.add("hidden"), 1500);
+    } else {
+      window.setTimeout(() => loadingText?.classList.add("animation"), 1500);
+      window.setTimeout(() => loading?.classList.add("hidden"), 2500);
+    }
+    sessionStorage.setItem("access", "0");
+  }
+
+  reset?.addEventListener("click", () => sessionStorage.removeItem("access"));
+</script>
+
+<style>
+  .wrap {
+    display: none;
+    flex-direction: row;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 100vh;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .scroll-button {
+    display: none;
+  }
+
+  .name {
+    position: fixed;
+    font-size: 30pt;
+    font-family: "Roboto Condensed";
+    letter-spacing: 5px;
+  }
+
+  .name a {
+    color: #1f1f1f;
+    text-decoration: none;
+  }
+
+  .right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60vw;
+  }
+
+  .loading {
+    width: 100vw;
+    height: 100vh;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    background-color: #fff;
+    font-weight: 300;
+    font-style: italic;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loading.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .animation {
+    animation: anim 1s forwards;
+  }
+
+  @keyframes anim {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-30vw);
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .name {
+      font-size: 20pt;
+    }
+  }
+
+  @media screen and (max-width: 649px) {
+    .wrap {
+      flex-direction: column;
+    }
+
+    .loading-text {
+      display: none;
+    }
+
+    .left {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .scroll-button {
+      position: absolute;
+      bottom: 20px;
+      z-index: 2;
+      display: inline-block;
+      text-decoration: none;
+      padding-top: 80px;
+      font-family: "Roboto Condensed";
+      font-weight: 300;
+      font-style: italic;
+      color: #1f1f1f;
+    }
+
+    .scroll-button span {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      margin-left: -12px;
+      border-left: 2px solid #1f1f1f;
+      border-bottom: 2px solid #1f1f1f;
+      transform: rotate(-45deg);
+      animation: sdb 2s infinite;
+      opacity: 0;
+      box-sizing: border-box;
+    }
+
+    .scroll-button span:nth-of-type(1) {
+      animation-delay: 0s;
+    }
+
+    .scroll-button span:nth-of-type(2) {
+      top: 16px;
+      animation-delay: 0.15s;
+    }
+
+    .scroll-button span:nth-of-type(3) {
+      top: 32px;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes sdb {
+      0% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+</style>

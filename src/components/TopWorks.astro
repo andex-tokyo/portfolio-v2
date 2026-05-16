@@ -1,0 +1,48 @@
+---
+import type { Work } from "../lib/microcms";
+
+type Props = {
+  works: Work[];
+};
+
+const { works } = Astro.props;
+---
+
+<div class="works" id="works">
+  <h3>-Works-</h3>
+  {works.map((content) => (
+    <a href={`/works/${content.id}/`}>
+      <div class="products">
+        {content.image?.[0]?.img?.url && <img src={content.image[0].img.url} alt="" />}
+      </div>
+    </a>
+  ))}
+</div>
+
+<style>
+  .works {
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  .products {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .products img {
+    width: 80%;
+    height: 80%;
+    aspect-ratio: 1.91 / 1;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 649px) {
+    .products {
+      margin-bottom: 20px;
+    }
+  }
+</style>
