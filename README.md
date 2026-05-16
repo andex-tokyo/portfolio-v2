@@ -40,3 +40,30 @@ Use these settings:
 - Environment variables: `SERVICE_DOMAIN`, `API_KEY`
 
 Redirects are defined in `public/_redirects`.
+
+## Content Deploy Webhook
+
+This repository deploys the Wrangler direct upload Pages project from GitHub Actions.
+
+Required GitHub Actions secrets:
+
+- `SERVICE_DOMAIN`
+- `API_KEY`
+- `CLOUDFLARE_ACCOUNT_ID`
+- `CLOUDFLARE_API_TOKEN`
+
+microCMS should trigger the `repository_dispatch` event:
+
+- Method: `POST`
+- URL: `https://api.github.com/repos/andex-tokyo/portfolio-v2/dispatches`
+- Headers:
+  - `Accept: application/vnd.github+json`
+  - `Authorization: Bearer <GitHub fine-grained PAT>`
+  - `X-GitHub-Api-Version: 2022-11-28`
+- Body:
+
+```json
+{
+  "event_type": "microcms_build"
+}
+```
